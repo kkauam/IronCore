@@ -1,8 +1,6 @@
 package health.IronCore.Controller;
-
-
-import health.IronCore.dto.WaterCalculatorRequest;
-import health.IronCore.dto.WaterCalculatorResponse;
+import health.IronCore.dto.water.WaterCalculatorRequest;
+import health.IronCore.dto.water.WaterCalculatorResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

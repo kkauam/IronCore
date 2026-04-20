@@ -1,4 +1,4 @@
-package health.IronCore.dto;
+package health.IronCore.dto.water;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 import health.IronCore.model.ActivityLevel;

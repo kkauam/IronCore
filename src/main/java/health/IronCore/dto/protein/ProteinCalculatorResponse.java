@@ -1,4 +1,4 @@
-package health.IronCore.dto;
+package health.IronCore.dto.protein;
 
 public record ProteinCalculatorResponse(
         double weightKg,

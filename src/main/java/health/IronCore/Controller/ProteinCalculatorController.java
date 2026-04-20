@@ -1,7 +1,7 @@
 package health.IronCore.Controller;
 
-import health.IronCore.dto.ProteinCalculatorRequest;
-import health.IronCore.dto.ProteinCalculatorResponse;
+import health.IronCore.dto.protein.ProteinCalculatorRequest;
+import health.IronCore.dto.protein.ProteinCalculatorResponse;
 import health.IronCore.service.ProteinCalculatorService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;

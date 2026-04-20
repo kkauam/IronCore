@@ -1,4 +1,4 @@
-package health.IronCore.dto;
+package health.IronCore.dto.protein;
 
 import health.IronCore.model.FitnessGoal;
 import jakarta.validation.constraints.DecimalMin;

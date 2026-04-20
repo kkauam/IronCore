@@ -1,6 +1,6 @@
 package health.IronCore;
 
-import health.IronCore.dto.WaterCalculatorRequest;
+import health.IronCore.dto.water.WaterCalculatorRequest;
 import health.IronCore.model.ActivityLevel;
 import org.junit.jupiter.api.Test;
 import health.IronCore.service.WaterCalculatorService;

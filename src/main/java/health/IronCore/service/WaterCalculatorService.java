@@ -1,7 +1,7 @@
 package health.IronCore.service;
 
-import health.IronCore.dto.WaterCalculatorRequest;
-import health.IronCore.dto.WaterCalculatorResponse;
+import health.IronCore.dto.water.WaterCalculatorRequest;
+import health.IronCore.dto.water.WaterCalculatorResponse;
 import org.springframework.stereotype.Service;
 
 @Service

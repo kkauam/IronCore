@@ -1,7 +1,7 @@
 package health.IronCore.service;
 
-import health.IronCore.dto.ProteinCalculatorRequest;
-import health.IronCore.dto.ProteinCalculatorResponse;
+import health.IronCore.dto.protein.ProteinCalculatorRequest;
+import health.IronCore.dto.protein.ProteinCalculatorResponse;
 import org.springframework.stereotype.Service;
 
 @Service

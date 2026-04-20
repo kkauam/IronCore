@@ -1,4 +1,4 @@
-package health.IronCore.dto;
+package health.IronCore.dto.water;
 
 public record WaterCalculatorResponse(
         double weightKg,
