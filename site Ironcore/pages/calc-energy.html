@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronCore — Gasto Energético</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/index.html" class="logo">Iron<span>Core</span></a>
+            <ul>
+                <li><a href="servicos.html">Calculadoras</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <div class="calc-header">
+                <h1>Gasto Energético</h1>
+                <p>Calcule sua TMB, TDEE e meta calórica diária com base no seu perfil e objetivo.</p>
+            </div>
+
+            <form id="form-energy">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="energy-weight">Peso (kg)</label>
+                        <input type="number" id="energy-weight" placeholder="Ex: 70" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="energy-height">Altura (cm)</label>
+                        <input type="number" id="energy-height" placeholder="Ex: 175" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="energy-age">Idade</label>
+                        <input type="number" id="energy-age" placeholder="Ex: 25" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="energy-gender">Sexo</label>
+                        <select id="energy-gender" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="MALE">Masculino</option>
+                            <option value="FEMALE">Feminino</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="energy-activity">Nível de atividade</label>
+                    <select id="energy-activity" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="SEDENTARY">Sedentário</option>
+                        <option value="LIGHT">Leve (1-3x/semana)</option>
+                        <option value="MODERATE">Moderado (3-5x/semana)</option>
+                        <option value="INTENSE">Intenso (6-7x/semana)</option>
+                        <option value="ATHLETE">Atleta (2x/dia)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="energy-goal">Objetivo</label>
+                    <select id="energy-goal" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="MAINTAIN">Manter peso</option>
+                        <option value="LOSE_WEIGHT">Emagrecer</option>
+                        <option value="GAIN_MUSCLE">Ganhar massa</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-calc">Calcular</button>
+            </form>
+
+            <div id="result-energy" class="result-box" style="display:none"></div>
+        </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronCore | Evolução baseada em dados</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS Library for animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">Iron<span>Core</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pages/sobre.html">Sobre</a>
+        <a href="pages/servicos.html">Serviços</a>
+        <a href="pages/contato.html">Contato</a>
+        <a href="pages/calc-agua.html" class="nav-cta">Começar agora</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <span class="hero-badge" data-aos="fade-down">Academia Inteligente</span>
+      <h1 data-aos="fade-up" data-aos-delay="100">Sua evolução começa com <span>dados reais</span></h1>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Pare de adivinhar. Calcule sua ingestão ideal de água, proteína, IMC e muito mais.
+        Tudo personalizado para o seu corpo e seus objetivos através de fórmulas científicas.
+      </p>
+      <div class="hero-btns" data-aos="fade-up" data-aos-delay="300">
+        <a href="pages/calc-agua.html" class="btn btn-primary">Experimente agora</a>
+        <a href="#sobre" class="btn btn-secondary">Saiba Mais</a>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="benefits">
+      <div class="section-header" data-aos="fade-up">
+        <span class="label">Por que IronCore?</span>
+        <h2 data-aos="fade-up">Otimize cada detalhe do seu treino</h2>
+        <p data-aos="fade-up">Ferramentas precisas para quem não aceita menos que a alta performance.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="benefit-icon"><i class="fas fa-droplet"></i></div>
+          <h3>Hidratação Precisa</h3>
+          <p>Cálculos baseados no seu peso e nível de atividade para máxima performance cognitiva e física.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="benefit-icon"><i class="fas fa-dumbbell"></i></div>
+          <h3>Aporte Proteico</h3>
+          <p>Saiba exatamente quanto de proteína consumir para hipertrofia ou definição muscular.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Métricas Reais</h3>
+          <p>Acompanhe seu IMC e Taxa Metabólica Basal para ajustar sua dieta com precisão.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULATORS CHOICE SECTION -->
+    <section class="benefits" style="background: rgba(93, 202, 165, 0.03);">
+      <div class="section-header" data-aos="fade-up">
+        <span class="label">Ferramentas</span>
+        <h2 data-aos="fade-up">O que deseja calcular hoje?</h2>
+        <p data-aos="fade-up">Escolha a ferramenta ideal para analisar seus dados agora.</p>
+      </div>
+      <div class="benefits-grid">
+        <a href="pages/calc-agua.html" class="benefit-card" data-aos="fade-up" data-aos-delay="100" style="text-decoration: none; display: block;">
+          <div class="benefit-icon"><i class="fas fa-droplet"></i></div>
+          <h3 style="color: var(--white)">Água Diária</h3>
+          <p>Calcular hidratação ideal <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></p>
+        </a>
+        <a href="pages/calc-proteina.html" class="benefit-card" data-aos="fade-up" data-aos-delay="200" style="text-decoration: none; display: block;">
+          <div class="benefit-icon"><i class="fas fa-dumbbell"></i></div>
+          <h3 style="color: var(--white)">Proteínas</h3>
+          <p>Calcular aporte proteico <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></p>
+        </a>
+        <a href="pages/calc-imc.html" class="benefit-card" data-aos="fade-up" data-aos-delay="300" style="text-decoration: none; display: block;">
+          <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+          <h3 style="color: var(--white)">IMC & TMB</h3>
+          <p>Análise corporal completa <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></p>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="sobre" class="about">
+      <div class="about-container">
+        <div class="about-image" data-aos="fade-right">
+          <img src="images/fitness data.png" alt="Fitness Data">
+        </div>
+        <div class="about-content" data-aos="fade-left">
+          <h2>Ciência aplicada ao <span style="color: var(--primary)">Fitness</span></h2>
+          <p>
+            O IronCore nasceu da necessidade de democratizar o acesso a cálculos nutricionais e biométricos precisos.
+            Acreditamos que a disciplina é fundamental, mas a direção correta — guiada por dados — é o que acelera os resultados.
+          </p>
+          <p>
+            Nossa plataforma integra fórmulas consagradas da nutrição esportiva para entregar respostas rápidas e confiáveis.
+          </p>
+          <a href="pages/sobre.html" class="btn btn-primary">Conheça nossa história</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+      <div class="section-header" data-aos="fade-up">
+        <span class="label">Feedback</span>
+        <h2 data-aos="fade-up">Quem usa, aprova</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100">
+          <p class="testimonial-text">"A calculadora de proteína mudou meu jogo. Finalmente parei de desperdiçar suplementos e vi meus ganhos acelerarem."</p>
+          <div class="testimonial-user">
+            <div class="user-avatar">MK</div>
+            <div class="user-info">
+              <span>Marcos Kauam</span>
+              <small>Atleta Amador</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
+          <p class="testimonial-text">"Simples, direto e visualmente incrível. Uso todos os dias para monitorar minha hidratação durante os treinos."</p>
+          <div class="testimonial-user">
+            <div class="user-avatar">AL</div>
+            <div class="user-info">
+              <span>Ana Lima</span>
+              <small>Nutricionista</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="300">
+          <p class="testimonial-text">"Finalmente um site que não tenta me vender suplementos, mas me dá os dados que eu preciso para treinar."</p>
+          <div class="testimonial-user">
+            <div class="user-avatar">JR</div>
+            <div class="user-info">
+              <span>João Rocha</span>
+              <small>Entusiasta de CrossFit</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <a href="index.html" class="logo">Iron<span>Core</span></a>
+        <p style="color: var(--text-dim); margin-top: 1rem; font-size: 0.9rem;">
+          Transformando dados em performance. A ferramenta essencial para quem busca a melhor versão de si mesmo.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="pages/sobre.html">Sobre</a>
+          <a href="pages/servicos.html">Serviços</a>
+          <a href="pages/contato.html">Contato</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Calculadoras</h4>
+        <div class="footer-links">
+          <a href="pages/calc-agua.html">Água Diária</a>
+          <a href="pages/calc-proteina.html">Proteínas</a>
+          <a href="pages/calc-imc.html">IMC & TMB</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Siga-nos</h4>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 IronCore. Todos os direitos reservados.</p>
+      <p>Desenvolvido com <i class="fas fa-heart" style="color: #ef4444"></i> por Kauam</p>
+    </div>
+  </footer>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>

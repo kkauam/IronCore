@@ -2,10 +2,10 @@ const API_URL = 'http://localhost:8080/api/calculators';
 
 document.addEventListener('DOMContentLoaded', () => {
     initIronCoreCalculators();
+    initContactForm();
 });
 
 function initIronCoreCalculators() {
-
     // 1. ÁGUA
     setupCalculator(
         'form-water',
@@ -41,6 +41,39 @@ function initIronCoreCalculators() {
         }),
         (data) => `IMC: <strong>${data.imcValue.toFixed(2)}</strong> (${data.imcCategory})`
     );
+
+    //4. TMB e TDEE
+    // 4. TMB e TDEE
+setupCalculator(
+    'form-energy',
+    '/energy',
+    'result-energy',
+    (form) => ({
+        weightKg: parseFloat(form.querySelector('#energy-weight').value),
+        heightCm: parseFloat(form.querySelector('#energy-height').value),
+        age: parseInt(form.querySelector('#energy-age').value),
+        gender: form.querySelector('#energy-gender').value,
+        activityLevel: form.querySelector('#energy-activity').value,
+        caloricGoal: form.querySelector('#energy-goal').value
+    }),
+    (data) => `
+        <div class="result-grid">
+            <div class="result-item">
+                <span class="result-label">TMB (repouso)</span>
+                <span class="result-value">${Math.round(data.bmr)} kcal</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">TDEE (gasto total)</span>
+                <span class="result-value">${Math.round(data.tdee)} kcal</span>
+            </div>
+            <div class="result-item highlight">
+                <span class="result-label">Meta diária</span>
+                <span class="result-value">${Math.round(data.targetCalories)} kcal</span>
+            </div>
+        </div>
+    `
+);
+
 }
 
 function setupCalculator(formId, endpoint, resultId, payloadBuilder, successMsgBuilder) {
@@ -112,4 +145,23 @@ function showFeedback(element, message, isSuccess) {
     element.innerHTML = message;
     element.className = `result-box ${isSuccess ? 'res-success' : 'res-error'}`;
     element.classList.remove('hidden');
+}
+
+function initContactForm() {
+    const form = document.querySelector('form') && !document.querySelector('#form-water') && !document.querySelector('#form-protein') && !document.querySelector('#form-imc');
+    // Simpler check: find the form that doesn't have a calculator ID
+    const contactForm = document.querySelector('form:not([id^="form-"])');
+    // Actually, let's just look for the contact form by the existence of a specific field
+    const emailField = document.getElementById('contact-email');
+
+    if (!emailField) return;
+
+    const formElement = emailField.closest('form');
+    if (!formElement) return;
+
+    formElement.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Obrigado por entrar em contato! Em breve responderemos sua mensagem.');
+        formElement.reset();
+    });
 }
