@@ -3,111 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serviços | IronCore</title>
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Planos & Serviços | IronCore</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body style="padding-top: 80px;">
+<body>
 
+  <!-- HEADER -->
   <header class="header">
     <nav class="nav-container">
-      <a href="/site Ironcore/index.html" class="logo">Iron<span>Core</span></a>
+      <div class="brand-wrap">
+        <a href="../index.html" class="logo">
+          <div class="logo-badge"><i class="fas fa-bolt"></i></div>
+          Iron<span>Core</span>
+        </a>
+      </div>
+
       <div class="nav-links">
-        <a href="/site Ironcore/index.html">Home</a>
+        <a href="../index.html">Home</a>
+        <a href="calc-agua.html">Calculadoras</a>
         <a href="sobre.html">Sobre</a>
-        <a href="servicos.html">Serviços</a>
+        <a href="servicos.html" class="active">Serviços</a>
         <a href="contato.html">Contato</a>
-        <a href="calc-agua.html" class="nav-cta">Começar agora</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="login-register.html" class="btn btn-secondary" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+          <i class="fas fa-user"></i> Entrar
+        </a>
+        <a href="calc-agua.html" class="nav-cta">
+          Começar <i class="fas fa-arrow-right"></i>
+        </a>
+        <button class="mobile-toggle" aria-label="Abrir menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </nav>
   </header>
 
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="calc-agua.html">💧 Calculadora de Água</a>
+    <a href="calc-proteina.html">🥩 Calculadora de Proteína</a>
+    <a href="calc-imc.html">📊 Calculadora de IMC</a>
+    <a href="calc-energy.html">🔥 Gasto Energético (TMB/TDEE)</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="servicos.html" class="active">Serviços</a>
+    <a href="contato.html">Contato</a>
+  </div>
+
   <main>
-    <section class="hero" style="padding-top: 60px;">
-      <span class="hero-badge">O que oferecemos</span>
-      <h1>Nossos <span style="color: var(--primary)">Serviços</span></h1>
-      <p>Do básico ao avançado, fornecemos as ferramentas para você dominar sua fisiologia.</p>
+    <section class="calc-page-hero">
+      <span class="section-label">Assinaturas & Soluções</span>
+      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 0.8rem;">
+        Potencialize seu físico com <span class="gradient-text">o plano certo</span>
+      </h1>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+        Do cálculo nutricional gratuito até análises avançadas de bioimpedância e prescrições com inteligência analítica.
+      </p>
     </section>
 
-    <section class="benefits">
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon"><i class="fas fa-calculator"></i></div>
-          <h3>Calculadoras Gratuitas</h3>
-          <p>Acesso imediato às ferramentas de água, proteína e IMC sem custo algum.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon"><i class="fas fa-chart-pie"></i></div>
-          <h3>Análise de TMB</h3>
-          <p>Saiba exatamente quantas calorias seu corpo queima em repouso para ajustar sua dieta.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon"><i class="fas fa-file-export"></i></div>
-          <h3>Relatórios de Evolução</h3>
-          <p>Exportação de dados para que você e seu nutricionista possam analisar seu progresso.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon"><i class="fas fa-user-shield"></i></div>
-          <h3>Planos Personalizados</h3>
-          <p>Sistemas de monitoramento avançado para atletas de alto rendimento.</p>
-        </div>
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" style="padding-top: 20px;">
+      <div class="pricing-toggle">
+        <span>Faturamento Mensal</span>
+        <label class="switch-toggle">
+          <input type="checkbox" id="pricing-billing-toggle">
+          <span class="slider-round"></span>
+        </label>
+        <span>Faturamento Anual <strong style="color: var(--primary); font-size: 0.8rem;">(Economize 20%)</strong></span>
       </div>
-    </section>
 
-    <section class="pricing" style="padding: 60px 2rem;">
-      <div class="section-header">
-        <span class="label">Investimento</span>
-        <h2>Escolha o plano ideal</h2>
-      </div>
       <div class="pricing-grid">
+        <!-- PLAN 1: FREE -->
         <div class="pricing-card">
-          <h3>Free</h3>
-          <div class="price">Grátis<span>/mês</span></div>
-          <div class="pricing-features">
-            <div class="feature-item"><i class="fas fa-check"></i> Calculadoras básicas</div>
-            <div class="feature-item"><i class="fas fa-check"></i> Acesso Web</div>
+          <h3>Community Free</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Para entusiastas que buscam consultas rápidas.</p>
+          <div class="price">
+            R$ 0 <span>/ mês</span>
           </div>
-          <a href="#" class="btn btn-secondary" style="display: block; text-align: center;">Usar agora</a>
+          <ul class="pricing-features-list">
+            <li><i class="fas fa-check"></i> Calculadora de Água Diária</li>
+            <li><i class="fas fa-check"></i> Calculadora de Proteínas</li>
+            <li><i class="fas fa-check"></i> Calculadora de IMC & Faixa Ideal</li>
+            <li><i class="fas fa-check"></i> Cálculo de Gasto Calórico (TMB)</li>
+            <li style="opacity: 0.4;"><i class="fas fa-xmark" style="color: var(--text-dim);"></i> Histórico em nuvem</li>
+            <li style="opacity: 0.4;"><i class="fas fa-xmark" style="color: var(--text-dim);"></i> Exportação de relatórios PDF</li>
+          </ul>
+          <a href="calc-agua.html" class="btn btn-secondary" style="width: 100%;">
+            Acessar Grátis
+          </a>
         </div>
+
+        <!-- PLAN 2: PRO (FEATURED) -->
         <div class="pricing-card featured">
-          <div class="featured-badge">Recomendado</div>
-          <h3>Pro</h3>
-          <div class="price">R$ 19<span>/mês</span></div>
-          <div class="pricing-features">
-            <div class="feature-item"><i class="fas fa-check"></i> Tudo do Free</div>
-            <div class="feature-item"><i class="fas fa-check"></i> Histórico de Dados</div>
-            <div class="feature-item"><i class="fas fa-check"></i> Exportação PDF</div>
+          <div class="featured-tag">Mais Escolhido</div>
+          <h3>Iron Athlete Pro</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Para quem leva a dieta e periodização a sério.</p>
+          <div class="price">
+            R$ <span class="price-val" data-monthly="29" data-annual="23">29</span> <span>/ mês</span>
           </div>
-          <a href="#" class="btn btn-primary" style="display: block; text-align: center;">Assinar Pro</a>
+          <ul class="pricing-features-list">
+            <li><i class="fas fa-check"></i> <strong>Tudo do plano Community</strong></li>
+            <li><i class="fas fa-check"></i> Histórico ilimitado de biometria</li>
+            <li><i class="fas fa-check"></i> Exportação de relatórios PDF completos</li>
+            <li><i class="fas fa-check"></i> Alertas e lembretes de hidratação</li>
+            <li><i class="fas fa-check"></i> Suporte prioritário via WhatsApp</li>
+          </ul>
+          <a href="login-register.html" class="btn btn-primary" style="width: 100%;">
+            <i class="fas fa-bolt"></i> Começar Teste de 7 Dias
+          </a>
         </div>
+
+        <!-- PLAN 3: COACH & CLINIC -->
         <div class="pricing-card">
-          <h3>Elite</h3>
-          <div class="price">R$ 49<span>/mês</span></div>
-          <div class="pricing-features">
-            <div class="feature-item"><i class="fas fa-check"></i> Tudo do Pro</div>
-            <div class="feature-item"><i class="fas fa-check"></i> Consultoria VIP</div>
-            <div class="feature-item"><i class="fas fa-check"></i> Planos Custom</div>
+          <h3>Coach & Clinic</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Para treinadores, nutricionistas e academias.</p>
+          <div class="price">
+            R$ <span class="price-val" data-monthly="79" data-annual="63">79</span> <span>/ mês</span>
           </div>
-          <a href="#" class="btn btn-secondary" style="display: block; text-align: center;">Ser Elite</a>
+          <ul class="pricing-features-list">
+            <li><i class="fas fa-check"></i> <strong>Tudo do plano Pro</strong></li>
+            <li><i class="fas fa-check"></i> Até 50 perfis de alunos/pacientes</li>
+            <li><i class="fas fa-check"></i> Painel do treinador com comparativos</li>
+            <li><i class="fas fa-check"></i> Exportação em lote para prontuários</li>
+            <li><i class="fas fa-check"></i> Acesso antecipado a novos recursos</li>
+          </ul>
+          <a href="contato.html" class="btn btn-secondary" style="width: 100%;">
+            Falar com Consultor
+          </a>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col">
-        <a href="/site Ironcore/index.html" class="logo">Iron<span>Core</span></a>
-        <p style="color: var(--text-dim); margin-top: 1rem; font-size: 0.9rem;">
-          Transformando dados em performance.
+        <a href="../index.html" class="logo">
+          <div class="logo-badge"><i class="fas fa-bolt"></i></div>
+          Iron<span>Core</span>
+        </a>
+        <p style="color: var(--text-muted); margin-top: 1.2rem; font-size: 0.92rem; line-height: 1.7;">
+          Transformando dados em hipertrofia e performance com rigor científico.
         </p>
       </div>
       <div class="footer-col">
         <h4>Navegação</h4>
         <div class="footer-links">
-          <a href="/site Ironcore/index.html">Home</a>
-          <a href="sobre.html">Sobre</a>
+          <a href="../index.html">Home</a>
+          <a href="sobre.html">Sobre Nós</a>
           <a href="servicos.html">Serviços</a>
           <a href="contato.html">Contato</a>
         </div>
@@ -117,22 +168,25 @@
         <div class="footer-links">
           <a href="calc-agua.html">Água Diária</a>
           <a href="calc-proteina.html">Proteínas</a>
-          <a href="calc-imc.html">IMC & TMB</a>
+          <a href="calc-imc.html">IMC</a>
+          <a href="calc-energy.html">Gasto Energético (TMB)</a>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Siga-nos</h4>
-        <div class="social-links">
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        </div>
+        <h4>Segurança & Pagamentos</h4>
+        <p style="color: var(--text-dim); font-size: 0.85rem; line-height: 1.6;">
+          Criptografia de ponta a ponta.<br>
+          Garantia de 7 dias sem compromisso.<br>
+          Cancele quando quiser.
+        </p>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 IronCore. Todos os direitos reservados.</p>
-      <p>Desenvolvido com <i class="fas fa-heart" style="color: #ef4444"></i> por Kauam</p>
+      <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--danger)"></i> por Bruno Kauam</p>
     </div>
-  </footer
+  </footer>
+
+  <script src="../js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acesso à Conta | IronCore</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body style="display: flex; flex-direction: column; justify-content: center; min-height: 100vh;">
+
+  <!-- Ambient Navigation Top Bar -->
+  <header style="padding: 1.5rem 2rem; position: fixed; top: 0; left: 0; width: 100%; z-index: 10;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+      <a href="../index.html" class="logo">
+        <div class="logo-badge"><i class="fas fa-bolt"></i></div>
+        Iron<span>Core</span>
+      </a>
+      <a href="../index.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+        <i class="fas fa-arrow-left"></i> Voltar ao Início
+      </a>
+    </div>
+  </header>
+
+  <main style="padding: 120px 1.5rem 60px; max-width: 480px; width: 100%; margin: 0 auto; z-index: 1;">
+    <div class="calc-glass-card" style="padding: 2.5rem 2rem;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <div class="logo-badge" style="width: 50px; height: 50px; font-size: 1.5rem; margin: 0 auto 1rem; border-radius: 14px;">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h2 id="auth-title" style="font-size: 1.6rem; color: #fff; font-weight: 800;">Entrar no IronCore</h2>
+        <p id="auth-desc" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
+          Gerencie seus cálculos e histórico de evolução
+        </p>
+      </div>
+
+      <!-- Auth Toggle Tabs -->
+      <div class="calc-nav-tabs" style="margin-bottom: 1.8rem; justify-content: center;">
+        <button type="button" class="tab-btn active" id="tab-login-btn">
+          <i class="fas fa-lock"></i> Entrar
+        </button>
+        <button type="button" class="tab-btn" id="tab-register-btn">
+          <i class="fas fa-user-plus"></i> Criar Conta
+        </button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="form-login">
+        <div class="input-field" style="margin-bottom: 1.2rem;">
+          <label for="login-email">Seu E-mail</label>
+          <div class="input-wrapper">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="login-email" placeholder="exemplo@ironcore.fit" required>
+          </div>
+        </div>
+
+        <div class="input-field" style="margin-bottom: 1.2rem;">
+          <label for="login-pass">
+            Sua Senha
+            <a href="#" style="font-size: 0.75rem; color: var(--primary);">Esqueceu?</a>
+          </label>
+          <div class="input-wrapper">
+            <i class="fas fa-key"></i>
+            <input type="password" id="login-pass" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem; margin-top: 0.5rem;">
+          Entrar na Conta <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <!-- REGISTER FORM (Hidden by default) -->
+      <form id="form-register" style="display: none;">
+        <div class="input-field" style="margin-bottom: 1.2rem;">
+          <label for="reg-name">Nome Completo</label>
+          <div class="input-wrapper">
+            <i class="fas fa-user"></i>
+            <input type="text" id="reg-name" placeholder="Ex: Lucas Silva" required>
+          </div>
+        </div>
+
+        <div class="input-field" style="margin-bottom: 1.2rem;">
+          <label for="reg-email">E-mail</label>
+          <div class="input-wrapper">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="reg-email" placeholder="seu@email.com" required>
+          </div>
+        </div>
+
+        <div class="input-field" style="margin-bottom: 1.2rem;">
+          <label for="reg-pass">Criar Senha</label>
+          <div class="input-wrapper">
+            <i class="fas fa-key"></i>
+            <input type="password" id="reg-pass" placeholder="Mínimo 8 caracteres" minlength="8" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem; margin-top: 0.5rem;">
+          Cadastrar Gratuitamente <i class="fas fa-check"></i>
+        </button>
+      </form>
+
+      <!-- Divider -->
+      <div style="display: flex; align-items: center; margin: 1.8rem 0; gap: 1rem; color: var(--text-dim); font-size: 0.78rem;">
+        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.08);"></div>
+        <span>OU CONTINUE COM</span>
+        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.08);"></div>
+      </div>
+
+      <!-- Social Logins -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+        <button type="button" class="btn btn-secondary" style="padding: 0.7rem; font-size: 0.85rem;" onclick="showToast('Login com Google em desenvolvimento', 'warn')">
+          <i class="fab fa-google"></i> Google
+        </button>
+        <button type="button" class="btn btn-secondary" style="padding: 0.7rem; font-size: 0.85rem;" onclick="showToast('Login com GitHub em desenvolvimento', 'warn')">
+          <i class="fab fa-github"></i> GitHub
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: 1.5rem; font-size: 0.82rem; color: var(--text-dim);">
+    &copy; 2026 IronCore. Criptografia de ponta a ponta.
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    // Tab Toggle Login / Register
+    const loginBtn = document.getElementById('tab-login-btn');
+    const regBtn = document.getElementById('tab-register-btn');
+    const loginForm = document.getElementById('form-login');
+    const regForm = document.getElementById('form-register');
+    const authTitle = document.getElementById('auth-title');
+    const authDesc = document.getElementById('auth-desc');
+
+    loginBtn.addEventListener('click', () => {
+      loginBtn.classList.add('active');
+      regBtn.classList.remove('active');
+      loginForm.style.display = 'block';
+      regForm.style.display = 'none';
+      authTitle.textContent = 'Entrar no IronCore';
+      authDesc.textContent = 'Gerencie seus cálculos e histórico de evolução';
+    });
+
+    regBtn.addEventListener('click', () => {
+      regBtn.classList.add('active');
+      loginBtn.classList.remove('active');
+      loginForm.style.display = 'none';
+      regForm.style.display = 'block';
+      authTitle.textContent = 'Criar Nova Conta';
+      authDesc.textContent = 'Junte-se à comunidade de alta performance IronCore';
+    });
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Login realizado com sucesso! Bem-vindo(a) de volta.', 'success');
+      setTimeout(() => { window.location.href = '../index.html'; }, 1500);
+    });
+
+    regForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Conta criada com sucesso! Redirecionando...', 'success');
+      setTimeout(() => { window.location.href = '../index.html'; }, 1500);
+    });
+  </script>
+</body>
+</html>

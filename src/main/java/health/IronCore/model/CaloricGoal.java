@@ -2,8 +2,8 @@ package health.IronCore.model;
 
 public enum CaloricGoal {
     MAINTAIN(0),
-    GAIN_MUSCLE(-500),
-    LOSE_WEIGHT(300);
+    GAIN_MUSCLE(500),
+    LOSE_WEIGHT(-500);
 
     private final int caloricAdjustment;
 

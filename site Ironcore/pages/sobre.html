@@ -3,76 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Nós | IronCore</title>
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Sobre Nós & Filosofia | IronCore</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body style="padding-top: 80px;">
+<body>
 
+  <!-- HEADER -->
   <header class="header">
     <nav class="nav-container">
-      <a href="/site Ironcore/index.html" class="logo">Iron<span>Core</span></a>
+      <div class="brand-wrap">
+        <a href="../index.html" class="logo">
+          <div class="logo-badge"><i class="fas fa-bolt"></i></div>
+          Iron<span>Core</span>
+        </a>
+      </div>
+
       <div class="nav-links">
-        <a href="/site Ironcore/index.html">Home</a>
-        <a href="sobre.html">Sobre</a>
+        <a href="../index.html">Home</a>
+        <a href="calc-agua.html">Calculadoras</a>
+        <a href="sobre.html" class="active">Sobre</a>
         <a href="servicos.html">Serviços</a>
         <a href="contato.html">Contato</a>
-        <a href="calc-agua.html" class="nav-cta">Começar agora</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="login-register.html" class="btn btn-secondary" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+          <i class="fas fa-user"></i> Entrar
+        </a>
+        <a href="calc-agua.html" class="nav-cta">
+          Começar <i class="fas fa-arrow-right"></i>
+        </a>
+        <button class="mobile-toggle" aria-label="Abrir menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </nav>
   </header>
 
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="calc-agua.html">💧 Calculadora de Água</a>
+    <a href="calc-proteina.html">🥩 Calculadora de Proteína</a>
+    <a href="calc-imc.html">📊 Calculadora de IMC</a>
+    <a href="calc-energy.html">🔥 Gasto Energético (TMB/TDEE)</a>
+    <a href="sobre.html" class="active">Sobre</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="contato.html">Contato</a>
+  </div>
+
   <main>
-    <section class="hero" style="padding-top: 60px;">
-      <span class="hero-badge">Nossa Essência</span>
-      <h1>Quem somos o <span style="color: var(--primary)">IronCore</span></h1>
-      <p>Transformando a ciência da nutrição e a biomecânica em ferramentas acessíveis para atletas e entusiastas.</p>
+    <section class="calc-page-hero">
+      <span class="section-label">Manifesto IronCore</span>
+      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 0.8rem;">
+        Ciência, Dados e <span class="gradient-text">Alta Performance</span>
+      </h1>
+      <p style="color: var(--text-muted); max-width: 620px; margin: 0 auto;">
+        Nascido para libertar atletas e praticantes da mediocridade das dietas genéricas através de ferramentas matemáticas rigorosas.
+      </p>
     </section>
 
-    <section class="about" style="padding: 60px 2rem;">
-      <div class="about-container">
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1534438327276-14ze82c3c4?auto=format&fit=crop&w=600&q=80" alt="About IronCore">
+    <!-- CONTENT SECTION -->
+    <section class="about-section" style="padding-top: 30px;">
+      <div class="about-grid">
+        <div class="about-image-wrapper">
+          <img src="../images/fitness data.png" alt="Plataforma de Dados IronCore">
         </div>
         <div class="about-content">
-          <h2>Nossa Missão</h2>
+          <span class="section-label">Nossa Missão</span>
+          <h2>A precisão matemática no lugar da adivinhação</h2>
           <p>
-            O IronCore surgiu da paixão por resultados concretos. Percebemos que muitas pessoas treinam duro, mas falham nos detalhes básicos: hidratação, aporte proteico e monitoramento de métricas.
+            O IronCore surgiu de uma frustração recorrente: atletas dedicados passam meses treinando com máxima intensidade, mas estagnam porque erram a hidratação, subestimam a proteína ou erram sua taxa de gasto calórico por centenas de calorias.
           </p>
           <p>
-            Nossa missão é fornecer as ferramentas exatas para que você possa ajustar sua rotina com precisão cirúrgica, eliminando o "acho que" e substituindo-o pelo "eu sei".
+            Construímos uma plataforma focada em garantir validações seguras, precisão matemática e respostas ultrarrápidas, encapsuladas em uma interface moderna, suave e intuitiva.
           </p>
-          <div class="benefits-grid" style="grid-template-columns: 1fr 1fr; margin-top: 2rem;">
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="fas fa-flask"></i></div>
-              <h3>Base Científica</h3>
-              <p>Todas as nossas fórmulas são baseadas em estudos de nutrição esportiva.</p>
+
+          <div class="features-checklist">
+            <div class="checklist-item">
+              <i class="fas fa-check-circle"></i> <strong>Equações de Mifflin-St Jeor</strong> para cálculo calórico padrão-ouro.
             </div>
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
-              <h3>Foco em Performance</h3>
-              <p>Criado por quem vive a rotina de treinos intensos.</p>
+            <div class="checklist-item">
+              <i class="fas fa-check-circle"></i> <strong>Diretrizes ISSN</strong> para aporte proteico proporcional por quilo.
             </div>
+            <div class="checklist-item">
+              <i class="fas fa-check-circle"></i> <strong>Fator de Hidratação 35ml/kg</strong> com compensação de sudorese.
+            </div>
+          </div>
+
+          <a href="calc-agua.html" class="btn btn-primary">
+            Experimentar Calculadoras <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Pillars Cards -->
+      <div style="margin-top: 5rem;">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="section-label">Nossos Pilares</span>
+          <h2>Excelência em Cada Detalhe</h2>
+          <p>Desenvolvido com foco absoluto em usabilidade, precisão e design refinado.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
+            <h3>Alta Performance & Precisão</h3>
+            <p>Algoritmos calibrados com base na literatura científica atual para garantir cálculos fidedignos em frações de segundo.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-cubes"></i></div>
+            <h3>Glassmorphism UI</h3>
+            <p>Design moderno com contrastes escuros, efeitos de desfoque de fundo e acentos em verde menta fluorescente.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-mobile-screen"></i></div>
+            <h3>Responsividade Total</h3>
+            <p>Experiência perfeita em computadores, tablets ou celulares, sem anúncios e com foco total na sua evolução.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col">
-        <a href="/site Ironcore/index.html" class="logo">Iron<span>Core</span></a>
-        <p style="color: var(--text-dim); margin-top: 1rem; font-size: 0.9rem;">
-          Transformando dados em performance.
+        <a href="../index.html" class="logo">
+          <div class="logo-badge"><i class="fas fa-bolt"></i></div>
+          Iron<span>Core</span>
+        </a>
+        <p style="color: var(--text-muted); margin-top: 1.2rem; font-size: 0.92rem; line-height: 1.7;">
+          Transformando dados em hipertrofia e performance com rigor científico.
         </p>
       </div>
       <div class="footer-col">
         <h4>Navegação</h4>
         <div class="footer-links">
-          <a href="/site Ironcore/index.html">Home</a>
-          <a href="sobre.html">Sobre</a>
+          <a href="../index.html">Home</a>
+          <a href="sobre.html">Sobre Nós</a>
           <a href="servicos.html">Serviços</a>
           <a href="contato.html">Contato</a>
         </div>
@@ -82,23 +157,23 @@
         <div class="footer-links">
           <a href="calc-agua.html">Água Diária</a>
           <a href="calc-proteina.html">Proteínas</a>
-          <a href="calc-imc.html">IMC & TMB</a>
+          <a href="calc-imc.html">IMC</a>
+          <a href="calc-energy.html">Gasto Energético (TMB)</a>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Siga-nos</h4>
-        <div class="social-links">
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        </div>
+        <h4>Credenciais</h4>
+        <p style="color: var(--text-dim); font-size: 0.85rem; line-height: 1.6;">
+          Fundado por entusiastas de nutrição esportiva baseada em evidências.
+        </p>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 IronCore. Todos os direitos reservados.</p>
-      <p>Desenvolvido com <i class="fas fa-heart" style="color: #ef4444"></i> por Kauam</p>
+      <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--danger)"></i> por Bruno Kauam</p>
     </div>
   </footer>
 
+  <script src="../js/script.js"></script>
 </body>
 </html>

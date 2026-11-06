@@ -3,7 +3,6 @@ package health.IronCore.Controller;
 import health.IronCore.dto.imc.ImcCalculatorRequest;
 import health.IronCore.dto.imc.ImcCalculatorResponse;
 import health.IronCore.service.ImcCalculatorService;
-import health.IronCore.service.ProteinCalculatorService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,86 +1,223 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IronCore — Gasto Energético</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Gasto Energético (TMB & TDEE) | IronCore</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/index.html" class="logo">Iron<span>Core</span></a>
-            <ul>
-                <li><a href="servicos.html">Calculadoras</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main class="calc-page">
-        <div class="calc-container">
-            <div class="calc-header">
-                <h1>Gasto Energético</h1>
-                <p>Calcule sua TMB, TDEE e meta calórica diária com base no seu perfil e objetivo.</p>
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav-container">
+      <div class="brand-wrap">
+        <a href="../index.html" class="logo">
+          <div class="logo-badge"><i class="fas fa-bolt"></i></div>
+          Iron<span>Core</span>
+        </a>
+      </div>
+
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="calc-agua.html" class="active">Calculadoras</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="login-register.html" class="btn btn-secondary" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+          <i class="fas fa-user"></i> Entrar
+        </a>
+        <a href="calc-agua.html" class="nav-cta">
+          Começar <i class="fas fa-arrow-right"></i>
+        </a>
+        <button class="mobile-toggle" aria-label="Abrir menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="calc-agua.html">💧 Calculadora de Água</a>
+    <a href="calc-proteina.html">🥩 Calculadora de Proteína</a>
+    <a href="calc-imc.html">📊 Calculadora de IMC</a>
+    <a href="calc-energy.html" class="active">🔥 Gasto Energético (TMB/TDEE)</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="contato.html">Contato</a>
+  </div>
+
+  <main>
+    <section class="calc-page-hero">
+      <span class="section-label">Termodinâmica Metabólica</span>
+      <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.8rem;">
+        Gasto Energético & <span class="gradient-text">Metabolismo Basal (TMB/TDEE)</span>
+      </h1>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+        Descubra quanto seu organismo queima em repouso absoluto, seu gasto calórico total diário e a meta de calorias calibrada para queima de gordura ou superávit anabólico.
+      </p>
+    </section>
+
+    <div class="calc-dedicated-container">
+      <!-- 4-Option Unified Switcher -->
+      <div class="calc-unified-switcher">
+        <a href="calc-agua.html" class="unified-switch-item"><i class="fas fa-droplet"></i> Água</a>
+        <a href="calc-proteina.html" class="unified-switch-item"><i class="fas fa-dumbbell"></i> Proteína</a>
+        <a href="calc-imc.html" class="unified-switch-item"><i class="fas fa-chart-line"></i> IMC</a>
+        <a href="calc-energy.html" class="unified-switch-item active"><i class="fas fa-fire-flame-curved"></i> Gasto Energético</a>
+      </div>
+
+      <!-- Main Glass Card -->
+      <div class="calc-glass-card">
+        <form id="form-energy">
+          <div class="calc-form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="input-field">
+              <label for="energy-weight">
+                Peso Corporal
+                <span class="label-unit">KG</span>
+              </label>
+              <div class="input-wrapper">
+                <i class="fas fa-weight-scale"></i>
+                <input type="number" id="energy-weight" placeholder="Ex: 75" step="0.1" required value="75">
+              </div>
             </div>
 
-            <form id="form-energy">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="energy-weight">Peso (kg)</label>
-                        <input type="number" id="energy-weight" placeholder="Ex: 70" step="0.1" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="energy-height">Altura (cm)</label>
-                        <input type="number" id="energy-height" placeholder="Ex: 175" required>
-                    </div>
-                </div>
+            <div class="input-field">
+              <label for="energy-height">
+                Altura
+                <span class="label-unit">CM</span>
+              </label>
+              <div class="input-wrapper">
+                <i class="fas fa-ruler"></i>
+                <input type="number" id="energy-height" placeholder="Ex: 175" required value="175">
+              </div>
+            </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="energy-age">Idade</label>
-                        <input type="number" id="energy-age" placeholder="Ex: 25" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="energy-gender">Sexo</label>
-                        <select id="energy-gender" required>
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="MALE">Masculino</option>
-                            <option value="FEMALE">Feminino</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="input-field">
+              <label for="energy-age">
+                Idade
+                <span class="label-unit">ANOS</span>
+              </label>
+              <div class="input-wrapper">
+                <i class="fas fa-cake-candles"></i>
+                <input type="number" id="energy-age" placeholder="Ex: 25" required value="25">
+              </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="energy-activity">Nível de atividade</label>
-                    <select id="energy-activity" required>
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="SEDENTARY">Sedentário</option>
-                        <option value="LIGHT">Leve (1-3x/semana)</option>
-                        <option value="MODERATE">Moderado (3-5x/semana)</option>
-                        <option value="INTENSE">Intenso (6-7x/semana)</option>
-                        <option value="ATHLETE">Atleta (2x/dia)</option>
-                    </select>
-                </div>
+            <div class="input-field">
+              <label for="energy-gender">Sexo Biológico</label>
+              <div class="input-wrapper">
+                <i class="fas fa-venus-mars"></i>
+                <select id="energy-gender" required>
+                  <option value="MALE" selected>Masculino</option>
+                  <option value="FEMALE">Feminino</option>
+                </select>
+              </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="energy-goal">Objetivo</label>
-                    <select id="energy-goal" required>
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="MAINTAIN">Manter peso</option>
-                        <option value="LOSE_WEIGHT">Emagrecer</option>
-                        <option value="GAIN_MUSCLE">Ganhar massa</option>
-                    </select>
-                </div>
+            <div class="input-field">
+              <label for="energy-activity">Frequência Semanal</label>
+              <div class="input-wrapper">
+                <i class="fas fa-person-running"></i>
+                <select id="energy-activity" required>
+                  <option value="SEDENTARY">Sedentário (trabalho de mesa)</option>
+                  <option value="LIGHT">Leve (treino 1 a 3x/sem)</option>
+                  <option value="MODERATE" selected>Moderado (treino 3 a 5x/sem)</option>
+                  <option value="INTENSE">Intenso (treino 6 a 7x/sem)</option>
+                  <option value="ATHLETE">Atleta (2 treinos diários)</option>
+                </select>
+              </div>
+            </div>
 
-                <button type="submit" class="btn-calc">Calcular</button>
-            </form>
+            <div class="input-field">
+              <label for="energy-goal">Objetivo Calórico</label>
+              <div class="input-wrapper">
+                <i class="fas fa-bullseye"></i>
+                <select id="energy-goal" required>
+                  <option value="MAINTAIN">Manter Peso (Equilíbrio Energético)</option>
+                  <option value="GAIN_MUSCLE">Superávit Calórico (Ganho de Massa)</option>
+                  <option value="LOSE_WEIGHT" selected>Déficit Calórico (Queima de Gordura)</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-            <div id="result-energy" class="result-box" style="display:none"></div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.05rem;">
+            <span class="btn-text"><i class="fas fa-calculator"></i> Calcular Gasto Energético</span>
+            <div class="loader hidden"></div>
+          </button>
+        </form>
+
+        <div id="result-energy" class="result-box hidden"></div>
+      </div>
+
+      <!-- Explanatory Card -->
+      <div style="margin-top: 3rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem;">
+        <h3 style="font-size: 1.15rem; color: var(--white); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
+          <i class="fas fa-circle-info" style="color: var(--cyan);"></i> Equação de Mifflin-St Jeor: Por que ela é superior?
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7;">
+          A fórmula de Mifflin-St Jeor é considerada atualmente pela Associação Dietética Americana a equação preditiva mais precisa para a estimativa da Taxa Metabólica Basal (TMB), superando a clássica fórmula de Harris-Benedict de 1919. A partir da TMB, multiplicamos pelo Fator de Atividade Física (TDEE) para encontrar seu gasto real total em 24 horas.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <a href="../index.html" class="logo">
+          <div class="logo-badge"><i class="fas fa-bolt"></i></div>
+          Iron<span>Core</span>
+        </a>
+        <p style="color: var(--text-muted); margin-top: 1.2rem; font-size: 0.92rem; line-height: 1.7;">
+          Transformando dados em hipertrofia e performance com rigor científico.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <div class="footer-links">
+          <a href="../index.html">Home</a>
+          <a href="sobre.html">Sobre Nós</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="contato.html">Contato</a>
         </div>
-    </main>
+      </div>
+      <div class="footer-col">
+        <h4>Calculadoras</h4>
+        <div class="footer-links">
+          <a href="calc-agua.html">Água Diária</a>
+          <a href="calc-proteina.html">Proteínas</a>
+          <a href="calc-imc.html">IMC</a>
+          <a href="calc-energy.html">Gasto Energético (TMB)</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Segurança & Precisão</h4>
+        <p style="color: var(--text-dim); font-size: 0.85rem; line-height: 1.6;">
+          Equação Mifflin-St Jeor.<br>
+          Cálculo termodinâmico basal.<br>
+          Resultados imediatos.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 IronCore. Todos os direitos reservados.</p>
+      <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--danger)"></i> por Bruno Kauam</p>
+    </div>
+  </footer>
 
-    <script src="../js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
