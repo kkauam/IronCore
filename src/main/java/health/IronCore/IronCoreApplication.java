@@ -9,11 +9,7 @@ import org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration;
 // Desativado temporariamente a conexão com o banco para permitir rodar as calculadoras
 // sem exigir a senha do PostgreSQL. Seu banco, tabelas e migrações permanecem intactos.
 // Quando quiser reconectar ao banco de dados, basta remover o parâmetro exclude.
-@SpringBootApplication(exclude = {
-		DataSourceAutoConfiguration.class,
-		HibernateJpaAutoConfiguration.class,
-		FlywayAutoConfiguration.class
-})
+@SpringBootApplication()
 public class IronCoreApplication {
 
 	public static void main(String[] args) {
